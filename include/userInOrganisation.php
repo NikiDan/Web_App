@@ -1,11 +1,11 @@
 <?
 
-function get_userNameOrganisation( $link){
-    $sql = "SELECT * FROM `user` INNER JOIN organisation ON user.Organisation_id=organisation.ID";
+function get_userNameOrganisation( $link, $id){
+    $sql = "SELECT * FROM organisation RIGHT JOIN user ON user.Organisation_id = organisation.ID WHERE organisation.ID = $id";
 
     $result = mysqli_query($link, $sql);
 
-    $userList = mysqli_fetch_all($result, 1);
+    $userListName = mysqli_fetch_all($result, 1);
 
-    return $userList;
+    return $userListName;
 }

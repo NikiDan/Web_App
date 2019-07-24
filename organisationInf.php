@@ -12,9 +12,9 @@
 include 'include/database.php';
 include 'include/organisationListName.php';
 include 'include/userList.php';
+include 'include/userInOrganisation.php';
 ?>
 <body>
-
 <div class="organisation-form">
     <legend class="cap-organisation-inf">Информация об организации</legend>
     <div class="organisation-inf-list">
@@ -39,14 +39,15 @@ include 'include/userList.php';
         <div class = "user-list-data-inf">
             <table class="user-table">
                 <tr>
-                    <?php  $userList = get_users($linkUser)?>
-<!--                    --><?php //$userList = get_userNameOrganisation($link)?>
+<!--                    --><?php // $userList = get_users($linkUser)?>
+                    <?php $userList = get_userNameOrganisation($link, $_GET['id'])?>
                     <?php foreach ($userList as $userList): ?>
                     <td class="user-name">
                         <a class="user-list-name" href="mainUser.php?id=<?=$userList["ID"]?>">
                         <?=$userList["Last_name"]?>
                         <?=$userList["First_name"]?>
                         <?=$userList["Middle_name"]?>
+                        </a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -58,6 +59,7 @@ include 'include/userList.php';
     </div>
 </div>
 
+<script type="text/javascript" src="js/linkToCreateUser.js"></script>
 
 </body>
 </html>

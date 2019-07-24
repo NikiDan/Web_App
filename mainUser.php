@@ -40,11 +40,6 @@ include 'include/userListName.php';
                 </table>
             </div>
         </div>
-    <div class="create-user">
-        <button type = "text" class="create-user-btn field-user" onclick="createUser()">Создать</button>
-    </div>
-
 </div>
-<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

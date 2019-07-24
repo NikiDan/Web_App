@@ -1,0 +1,71 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle farthest-corner at 100px 50px, #FBF2EB, #352A3B);
+}
+.create-user{
+    border-radius: 10px;
+    background-color: #222;
+}
+.cap-create {
+    text-align: center;
+	height: auto;
+    width: auto;
+    padding: 10px 0px 10px 10px;
+    font-size: 18px;
+}
+.create-user-content{
+    min-height: 270px;
+	color: #fff;
+    font-family: Tahoa, sans-serif;
+    width: 307px;
+}
+.last_name{
+	display: inline-block;
+    width: 100%;
+    height: auto;
+}
+.label-create{
+    padding: 0 0 0 10px;
+    float: left;
+    margin: 7px 0 0 0;
+}
+.field-create{
+    float: right;
+    margin: 7px 10px 0 0;
+    padding: 0 0 0 4px;
+}
+.field-create::-webkit-input-placeholder{
+    font-style: italic;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 12px;
+    opacity: 0.4;
+}
+.birthday-label{
+    margin: 10px 0 0 0;
+}
+.taks-label{
+    margin: 12px 0 0 0;
+}
+.add-user{
+    display: inline-block;
+    float: right;
+    width: 100%;
+}
+.add-user-btn{
+    margin: 11px 10px 0 0;
+    padding: 0 2px 0 0;
+}
+.tai-field{
+    margin: 39px 0px 0 0px;
+    position: relative;
+    right: 75px;
+}
+.input-form-birthday{
+    width: 169px;
+}
+.input-form-name-organisation{
+    width: 177px;
+}
