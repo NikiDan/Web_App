@@ -55,7 +55,7 @@ include 'include/userInOrganisation.php';
         </div>
     </div>
     <div class="create-user">
-        <button type = "text" class="create-user-btn field-user" onclick="createUser()">Создать</button>
+        <button type = "text" class="create-user-btn field-user" onclick="createUser()">Create user</button>
     </div>
 </div>
 

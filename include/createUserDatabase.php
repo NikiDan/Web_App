@@ -30,9 +30,21 @@
         $query = "INSERT INTO `user`(`Last_name`, `First_name`, `Middle_name`, `Birthday_date`, `TAI`, `INIPA`, `Organisation_ID`) VALUES ('$lastName','$firstName', '$middleName','$birthday', '$tai', '$inip', '$organisationID')";
         $result = $linkCreateUser->query($query);
 
+        if (!$lastName ||
+            !$firstName ||
+            !$middleName ||
+            !$birthday ||
+            !$tai ||
+            !$inip ||
+            !$organisationID) {
+            mysqli_close($linkCreateUser);
+            echo "Информация не занесена в базу данных";
+        }
+
         if ($result == true) {
             echo "Информация занесена в базу данных";
-        } else {
+        }
+        else {
             echo "Информация не занесена в базу данных";
         }
 

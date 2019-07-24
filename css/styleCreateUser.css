@@ -4,6 +4,7 @@ body{
     align-items: center;
     height: 100vh;
     background: radial-gradient(circle farthest-corner at 100px 50px, #FBF2EB, #352A3B);
+    flex-direction: column;
 }
 .create-user{
     border-radius: 10px;
@@ -33,9 +34,11 @@ body{
     margin: 7px 0 0 0;
 }
 .field-create{
+    border-left-width: 0;
     float: right;
     margin: 7px 10px 0 0;
     padding: 0 0 0 4px;
+    border-radius: 3px;
 }
 .field-create::-webkit-input-placeholder{
     font-style: italic;
@@ -57,6 +60,10 @@ body{
 .add-user-btn{
     margin: 11px 10px 0 0;
     padding: 0 2px 0 0;
+    background-color: #fff;
+    width: 75px;
+    border-width: 0;
+    height: 20px;
 }
 .tai-field{
     margin: 39px 0px 0 0px;
@@ -67,5 +74,16 @@ body{
     width: 169px;
 }
 .input-form-name-organisation{
-    width: 177px;
+    width: 175px;
+}
+.error{
+    font-family: 'Tahoma', sans-serif;
+    color: #fff;
+    width: 307px;
+    min-height: 45px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0 0 0;
+    margin: 10px 0 0 0;
+
 }
