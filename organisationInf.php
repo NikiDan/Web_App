@@ -39,7 +39,6 @@ include 'include/userInOrganisation.php';
         <div class = "user-list-data-inf">
             <table class="user-table">
                 <tr>
-<!--                    --><?php // $userList = get_users($linkUser)?>
                     <?php $userList = get_userNameOrganisation($link, $_GET['id'])?>
                     <?php foreach ($userList as $userList): ?>
                     <td class="user-name">

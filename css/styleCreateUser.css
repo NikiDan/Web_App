@@ -34,11 +34,11 @@ body{
     margin: 7px 0 0 0;
 }
 .field-create{
-    border-left-width: 0;
     float: right;
     margin: 7px 10px 0 0;
     padding: 0 0 0 4px;
     border-radius: 3px;
+    border: 2px solid transparent;
 }
 .field-create::-webkit-input-placeholder{
     font-style: italic;
@@ -64,6 +64,7 @@ body{
     width: 75px;
     border-width: 0;
     height: 20px;
+    font-weight: 600;
 }
 .tai-field{
     margin: 39px 0px 0 0px;

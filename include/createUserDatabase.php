@@ -1,11 +1,11 @@
 <?
-
     if (isset($_POST['Last_name']) && isset($_POST['First_name'])
-                                    && isset($_POST['Middle_name'])
-                                    && isset($_POST['Birthday_date'])
-                                    && isset($_POST['TAI'])
-                                    && isset($_POST['INIP'])
-                                    && isset($_POST['Organisation_ID'])) {
+        && isset($_POST['Middle_name'])
+        && isset($_POST['Birthday_date'])
+        && isset($_POST['TAI'])
+        && isset($_POST['INIP'])
+        && isset($_POST['Organisation_ID'])
+    ) {
 
         $lastName = $_POST['Last_name'];
         $firstName = $_POST['First_name'];
@@ -22,31 +22,22 @@
 
         $linkCreateUser = mysqli_connect($db_host, $db_user, '', $db_base);
 
-        if (mysqli_connect_errno()) {
-            echo 'Ошибка в подключении к базе данных (' . mysqli_connect_errno() . '): ' . mysqli_connect_error();
-            exit();
-        }
+        if(empty($lastName)) exit("Field is uncorrect");
+        if(empty($firstName)) exit("Field is uncorrect");
+        if(empty($middleName)) exit("Field is uncorrect");
+        if(empty($birthday)) exit("Field is uncorrect");
+        if(empty($tai)) exit("Field is uncorrect");
+        if(empty($inip)) exit("Field is uncorrect");
+        if(empty($organisationID)) exit("Field is uncorrect");
 
         $query = "INSERT INTO `user`(`Last_name`, `First_name`, `Middle_name`, `Birthday_date`, `TAI`, `INIPA`, `Organisation_ID`) VALUES ('$lastName','$firstName', '$middleName','$birthday', '$tai', '$inip', '$organisationID')";
         $result = $linkCreateUser->query($query);
 
-        if (!$lastName ||
-            !$firstName ||
-            !$middleName ||
-            !$birthday ||
-            !$tai ||
-            !$inip ||
-            !$organisationID) {
-            mysqli_close($linkCreateUser);
-            echo "Информация не занесена в базу данных";
-        }
-
         if ($result == true) {
             echo "Информация занесена в базу данных";
-        }
-        else {
+        } else {
             echo "Информация не занесена в базу данных";
         }
-
     }
+
 
