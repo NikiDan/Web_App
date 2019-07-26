@@ -5,7 +5,7 @@ function get_organisationName( $link, $id ){
     $result = mysqli_query($link, $sql);
 
     if ($result==false) {
-        echo '<meta http-equiv="refresh" content="0;URL=errorPage.html">';
+        echo '<meta http-equiv="refresh" content="0;URL=errorPageInfo.html">';
     }
 
     $organisation = mysqli_fetch_all($result, 1);
