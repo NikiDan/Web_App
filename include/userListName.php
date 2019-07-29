@@ -5,11 +5,14 @@ function get_userName( $link, $id ){
 
     $result = mysqli_query($link, $sql);
 
-    if ($result==false) {
-        echo '<meta http-equiv="refresh" content="0;URL=errorPageInfo.html">';
-    }
+//    if ($result==false) {
+//        echo '<meta http-equiv="refresh" content="0;URL=errorPageInfo.html">';
+//    }
 
     $userList = mysqli_fetch_all($result, 1);
 
+
     return $userList;
+
+
 }

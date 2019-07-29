@@ -36,3 +36,13 @@ body{
 .user-table-field{
     padding: 0 10px 0 0;
 }
+.delete-string{
+    width: 75px;
+    /*background: transparent;*/
+    color: #c32121;
+    border: 0px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 0 10px 0 0;
+}

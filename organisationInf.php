@@ -13,6 +13,7 @@ include 'include/database.php';
 include 'include/organisationListName.php';
 include 'include/userList.php';
 include 'include/userInOrganisation.php';
+include 'include/organisationList.php';
 ?>
 <body>
 <div class="organisation-form">
@@ -48,6 +49,7 @@ include 'include/userInOrganisation.php';
                         <?=$userList["Middle_name"]?>
                         </a>
                     </td>
+<!--                    <td><a class="delete-string" href="mainUser.php?id=--><?//=$userList["ID"]?><!--">Delete</a></td>-->
                 </tr>
                 <?php endforeach; ?>
             </table>
