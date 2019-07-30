@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Организации</title>
+    <title>Organisations</title>
     <link rel="stylesheet" href="css/styleOrganisationMain.css">
 </head>
 <?php
@@ -14,7 +14,7 @@ require 'include/organisationList.php';
 ?>
 <body>
     <div class="organisation-form">
-        <legend class="cap-organisation">Организации</legend>
+        <legend class="cap-organisation">Organisations</legend>
             <div class="organisation-list">
             <?php  $organisation = get_organisations($link);?>
                 <?php foreach ($organisation as $organisation): ?>

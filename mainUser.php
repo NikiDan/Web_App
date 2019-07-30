@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:javascript="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,7 +11,6 @@
 <?php
 include 'include/database.php';
 include 'include/userListName.php';
-include 'include/deleteStringBD.php';
 ?>
 <body>
 <div class="user-form">
@@ -38,23 +37,14 @@ include 'include/deleteStringBD.php';
                         <td class="user-table-field"><?=$userList["TAI"]?></td>
                         <td class="user-table-field"><?=$userList["INIPA"]?></td>
                         <td class="user-table-field">
-<!--                            <form method="post">-->
-<!--                            <input type="submit" name="delete" value="Delete" class="delete-string" onclick="deleteString()">-->
-<!--                                <input type=hidden name=hidden-delete-string value='".$_POST['id']"'></form>-->
-<!--                            --><?php //echo "<script>deleteStting()</script>";?>
-<!--                            <a href="mainOrganisation.php"></a>-->
                             <a class="delete-string" href="mainUser.php?del=<?=$userList["ID"]?>"  name="delete">Delete</a>
-<!--                            --><?php // $deleteUser = delete_string($link, $_GET['id']);?>
-<!--                            </form>-->
-<!--                        </td>-->
+                        </td>
                     </tr>
     <?php endforeach; ?>
                 </table>
             </div>
         </div>
 </div>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="js/deleteButton.js"></script>
 
 </body>
 </html>

@@ -17,7 +17,7 @@ include 'include/organisationList.php';
 ?>
 <body>
 <div class="organisation-form">
-    <legend class="cap-organisation-inf">Информация об организации</legend>
+    <legend class="cap-organisation-inf">Information about  organisation</legend>
     <div class="organisation-inf-list">
         <table class="organisation-inf-table">
             <tr>

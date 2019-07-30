@@ -88,3 +88,16 @@ body{
     margin: 10px 0 0 0;
 
 }
+.link-to-home{
+    margin: 0 0 0 0;
+    padding: 0 2px 0 0;
+    background-color: #fff;
+    width: 75px;
+    border-width: 0;
+    height: 20px;
+    font-weight: 600;
+    float: left;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}

@@ -1,40 +1,45 @@
 <?
-    if (isset($_POST['Last_name']) && isset($_POST['First_name'])
-        && isset($_POST['Middle_name'])
-        && isset($_POST['Birthday_date'])
-        && isset($_POST['TAI'])
-        && isset($_POST['INIP'])
-        && isset($_POST['Organisation_ID'])
+    if (isset($_POST['last_name']) && isset($_POST['first_name'])
+        && isset($_POST['middle_name'])
+        && isset($_POST['birthday_date'])
+        && isset($_POST['tai'])
+        && isset($_POST['inip'])
+        && isset($_POST['organisation_ID'])
     ) {
 
-        $lastName = $_POST['Last_name'];
-        $firstName = $_POST['First_name'];
-        $middleName = $_POST['Middle_name'];
-        $birthday = date($_POST['Birthday_date']);
-        $tai = $_POST['TAI'];
-        $inip = $_POST['INIP'];
-        $organisationID = $_POST['Organisation_ID'];
+        $lastName = $_POST['last_name'];
+        $firstName = $_POST['first_name'];
+        $middleName = $_POST['middle_name'];
+        $birthday = date($_POST['birthday_date']);
+        $tai = $_POST['tai'];
+        $inip = $_POST['inip'];
+        $organisationID = $_POST['organisation_ID'];
 
-        $fieldData = array($_POST['Last_name'],
-            $_POST['First_name'],
-            $_POST['Middle_name'],
+        $fieldData = array($_POST['last_name'],
+            $_POST['first_name'],
+            $_POST['middle_name'],
 //            $_POST['Birthday_date'],
-            $_POST['TAI'],
-            $_POST['INIP']);
+            $_POST['tai'],
+            $_POST['inip']);
 //            $_POST['Organisation_ID']);
 
-         $fieldDataString = str_split(implode($fieldData));
 
-        $forbiddenSymbols = array("!", "@", "#","$","%","^","&","*","!(",")", "~", "{", "}", "[", "]",
-            "|", "/", "?", ".", ",", "<", ">", ":", ";", "'", " ", "№", "-", "_", "+", "=",
-            "`");
+         $forbiddenSymbols = iconv('utf-8', 'windows-1251', '[[^a-zA-zа-яА-Я-1-9]]');
 
-            $resultArray = (array_uintersect($fieldDataString, $forbiddenSymbols, "strcasecmp"));
+         $fieldString = /*str_split*/iconv('utf-8', 'windows-1251', (implode($fieldData)));
 
-            if (!empty($resultArray)) {
+         preg_match_all($forbiddenSymbols, $fieldString, $matches);
+//        $forbiddenSymbols = array("!", "@", "#","$","%","^","&","*","(",")", "~", "{", "}", "[", "]",
+//            "|", "/", "?", ".", ",", "<", ">", ":", ";", "'", " ", "№", "-", "_", "+", "=",
+//            "`");
+
+//        var_dump($matches);
+
+//            $resultArray = (array_uintersect($fieldDataString, $forbiddenSymbols, "strcasecmp"));
+
+            if (sizeof($matches[0])>0) {
                 echo '<meta http-equiv="refresh" content="0;URL=errorPageCreate.html">';
                 exit();
-
             }
 //
         $db_host = "localhost";
@@ -57,9 +62,9 @@
         $result = $linkCreateUser->query($query);
 
         if ($result == true) {
-            echo "Информация занесена в базу данных";
+            echo "Successful!!!!";
         } else {
-            echo "Информация не занесена в базу данных";
+            echo "Not successful!!!!";
         }
     }
 
