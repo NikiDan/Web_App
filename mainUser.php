@@ -26,6 +26,7 @@ include 'include/userListName.php';
                         <th class="user-table-field">TAI</th>
                         <th class="user-table-field">INIPA</th>
                         <th class="user-table-field">Notation</th>
+                        <th class="user-table-field">Edit</th>
                     </tr>
                     <tr>
                 <?php  $userList = get_userName($link, $_GET['id']);?>
@@ -37,7 +38,10 @@ include 'include/userListName.php';
                         <td class="user-table-field"><?=$userList["TAI"]?></td>
                         <td class="user-table-field"><?=$userList["INIPA"]?></td>
                         <td class="user-table-field">
-                            <a class="delete-string" href="mainUser.php?del=<?=$userList["ID"]?>"  name="delete">Delete</a>
+                            <a class="delete-string string-function" href="mainUser.php?del=<?=$userList["ID"]?>"  name="delete">Delete</a>
+                        </td>
+                        <td class="user-table-field">
+                            <a class="edit-string string-function" href="editUser.php?id=<?=$userList["ID"]?>"  name="edit">Edit</a>
                         </td>
                     </tr>
     <?php endforeach; ?>

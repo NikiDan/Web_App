@@ -1,5 +1,4 @@
 <?
-
 function get_userName( $link, $id ){
     $sql = "SELECT * FROM `user` WHERE ID = $id";
 

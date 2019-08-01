@@ -20,27 +20,27 @@ include 'include/organisationList.php';
         <form method="post" action="createUser.php">
         <div class="content-field last-name">
             <label class="last-name-label label-create">Last name: </label>
-            <input type="text" class="input-form-last-name input-create-user field-create" placeholder="Your last name" name="last_name">
+            <input type="text" class="input-form-last-name input-create-user field-create" placeholder="Your last name" name="last_name" required>
         </div>
         <div class="content-field first-name">
             <label class="first-name-label label-create">First name: </label>
-            <input type="text" class="input-form-first-name input-create-user field-create" placeholder="Your first name" name="first_name">
+            <input type="text" class="input-form-first-name input-create-user field-create" placeholder="Your first name" name="first_name" required>
         </div>
         <div class="content-field midle-name">
             <label class="middle-name-label label-create">Middle name: </label>
-            <input type="text" class="input-form-middle-name input-create-user field-create" placeholder="Your middle name" name="middle_name">
+            <input type="text" class="input-form-middle-name input-create-user field-create" placeholder="Your middle name" name="middle_name" required>
         </div>
         <div class="content-field birthday">
             <label class="birthday-label label-create">Birthday: </label>
-            <input type="date" class="input-form-birthday input-create-user field-create" name="birthday_date">
+            <input type="date" class="input-form-birthday input-create-user field-create" name="birthday_date" required>
         </div>
         <div class="content-field index-taks">
             <label class="taks-label label-create tai-field">TAI: </label>
-            <input type="text" class="input-form-index-taks input-create-user field-create" name="tai">
+            <input type="text" class="input-form-index-taks input-create-user field-create" name="tai" required>
         </div>
         <div class="content-field index-insurance">
             <label class="insurance-label label-create">INIP: </label>
-            <input type="text" class="input-form-index-insurance input-create-user field-create" name="inip">
+            <input type="text" class="input-form-index-insurance input-create-user field-create" name="inip" required>
         </div>
         <div class="content-field name-organisation">
             <label class="organisation-name-label label-create">Organisation: </label>

@@ -49,7 +49,6 @@ include 'include/organisationList.php';
                         <?=$userList["Middle_name"]?>
                         </a>
                     </td>
-<!--                    <td><a class="delete-string" href="mainUser.php?id=--><?//=$userList["ID"]?><!--">Delete</a></td>-->
                 </tr>
                 <?php endforeach; ?>
             </table>
