@@ -1,10 +1,10 @@
 <?
-    if (isset($_POST['last_name']) && isset($_POST['first_name'])
-        && isset($_POST['middle_name'])
-        && isset($_POST['birthday_date'])
-        && isset($_POST['tai'])
-        && isset($_POST['inip'])
-        && isset($_POST['organisation_ID'])
+    if (isset($_POST['last_name'])&& isset($_POST['first_name'])
+                                  && isset($_POST['middle_name'])
+                                  && isset($_POST['birthday_date'])
+                                  && isset($_POST['tai'])
+                                  && isset($_POST['inip'])
+                                  && isset($_POST['organisation_ID'])
     ) {
 
         $lastName = $_POST['last_name'];
@@ -16,31 +16,31 @@
         $organisationID = $_POST['organisation_ID'];
 
         $fieldData = array($_POST['last_name'],
-            $_POST['first_name'],
-            $_POST['middle_name'],
-//            $_POST['Birthday_date'],
-            $_POST['tai'],
-            $_POST['inip']);
-//            $_POST['Organisation_ID']);
+                           $_POST['first_name'],
+                           $_POST['middle_name'],
+                           $_POST['tai'],
+                           $_POST['inip']);
 
+        function validate($fieldData)
+        {
+            $forbiddenSymbols = iconv('utf-8', 'windows-1251', '[[^a-zA-zа-яА-Я-1-9]]');
 
-         $forbiddenSymbols = iconv('utf-8', 'windows-1251', '[[^a-zA-zа-яА-Я-1-9]]');
+            $fieldString = iconv('utf-8', 'windows-1251', (implode($fieldData)));
 
-         $fieldString = /*str_split*/iconv('utf-8', 'windows-1251', (implode($fieldData)));
+            preg_match_all($forbiddenSymbols, $fieldString, $matches);
 
-         preg_match_all($forbiddenSymbols, $fieldString, $matches);
-//        $forbiddenSymbols = array("!", "@", "#","$","%","^","&","*","(",")", "~", "{", "}", "[", "]",
-//            "|", "/", "?", ".", ",", "<", ">", ":", ";", "'", " ", "№", "-", "_", "+", "=",
-//            "`");
+            if (sizeof($matches[0]) > 0) {
 
-//        var_dump($matches);
-
-//            $resultArray = (array_uintersect($fieldDataString, $forbiddenSymbols, "strcasecmp"));
-
-            if (sizeof($matches[0])>0) {
-                echo '<meta http-equiv="refresh" content="0;URL=errorPageCreate.html">';
-                exit();
+                throw new Exception();
             }
+        }
+        try{
+            validate($fieldData);
+        }
+        catch (Exception $error){
+            echo '<meta http-equiv="refresh" content="0;URL=errorPageCreate.html">';
+            exit();
+        }
 //
         $db_host = "localhost";
         $db_user = "root"; // Логин БД
